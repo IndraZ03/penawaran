@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bimbel & Try Out Speedu - #NgebutBelajar</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      type="text/javascript"
+      src="https://app.sandbox.midtrans.com/snap/snap.js"
+      data-client-key="SB-Mid-client-xxxxxxxxxxxxxx"
+    ></script>
+    <style>
+      :root {
+        --primary-color: #0061d3;
+        --secondary-color: #facc15;
+        --text-dark: #1f2937;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f3f4f6;
+      }
+      .bg-primary {
+        background-color: var(--primary-color);
+      }
+      .bg-secondary {
+        background-color: var(--secondary-color);
+      }
+      .text-primary {
+        color: var(--primary-color);
+      }
+      .text-secondary {
+        color: var(--secondary-color);
+      }
+      .border-primary {
+        border-color: var(--primary-color);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .card-animation {
+        animation: fadeIn 0.5s ease-out forwards;
+      }
+
+      .btn-glow:hover {
+        box-shadow: 0 0 15px 5px rgba(250, 204, 21, 0.4);
+      }
+
+      @keyframes draw-strike {
+        from {
+          width: 0;
+        }
+        to {
+          width: 104%;
+        }
+      }
+      .price-original {
+        position: relative;
+        display: inline-block;
+      }
+      .price-original::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -2%;
+        height: 100%;
+        width: 0;
+        transform: translateY(-50%) rotate(-2deg);
+        background-image: url("data:image/svg+xml,%3Csvg width='100' height='12' viewBox='0 0 100 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 6.13636C10.2727 3.95455 23.3636 2.5 36.3636 2.5C50.9091 2.5 65.4545 4.5 78.4545 6.5C84.4545 7.5 91.5455 9 98 10' stroke='%23ef4444' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        animation: draw-strike 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.5s
+          forwards;
+      }
+
+      @keyframes shimmer-background {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .countdown-box-glow {
+        background: linear-gradient(
+          -45deg,
+          #00336e,
+          var(--primary-color),
+          #0d1a2e,
+          #00336e
+        );
+        background-size: 400% 400%;
+        animation: shimmer-background 15s ease infinite;
+        border: none;
+      }
+
+      .modal-backdrop {
+        transition: opacity 0.3s ease;
+      }
+      .modal-content {
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <header class="bg-white shadow-md py-3 sticky top-0 z-50">
+      <div class="container mx-auto px-4 flex justify-between items-center">
+        <a href="#">
+          <img src="speedulogo.png" alt="Logo Speedu" class="h-8 sm:h-10" />
+        </a>
+
+        <nav class="hidden md:flex items-center space-x-2">
+          <a
+            href="#bimbel"
+            class="px-4 py-2 text-gray-600 font-semibold hover:text-primary transition-colors"
+            >Program Bimbel</a
+          >
+          <a
+            href="#tryout"
+            class="px-4 py-2 text-gray-600 font-semibold hover:text-primary transition-colors"
+            >Try Out</a
+          >
+          <a
+            href="https://api.whatsapp.com/send?phone=6287778363537"
+            target="_blank"
+            class="bg-primary text-white font-bold text-sm px-5 py-2 rounded-full hover:bg-blue-700 transition-colors"
+            >Hubungi Kami</a
+          >
+        </nav>
+
+        <button
+          id="mobile-menu-button"
+          class="md:hidden p-2 rounded-md text-gray-600 hover:bg-gray-100"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white border-t border-gray-200"
+      >
+        <a
+          href="#bimbel"
+          class="block px-4 py-3 text-gray-600 font-semibold hover:bg-gray-50"
+          >Program Bimbel</a
+        >
+        <a
+          href="#tryout"
+          class="block px-4 py-3 text-gray-600 font-semibold hover:bg-gray-50"
+          >Try Out</a
+        >
+        <a
+          href="https://api.whatsapp.com/send?phone=6287778363537"
+          target="_blank"
+          class="block px-4 py-3 text-green-500 font-bold hover:bg-gray-50"
+          >Hubungi Kami</a
+        >
+      </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 py-10">
+      <section class="text-center mb-16">
+        <h2
+          class="text-4xl sm:text-5xl md:text-6xl font-black text-gray-800 mb-3 leading-tight"
+        >
+          PROMO SPESIAL
+          <span class="text-primary block sm:inline">#NGEBUTBELAJAR</span>
+        </h2>
+        <p class="text-base sm:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+          Wujudkan mimpimu menjadi Abdi Negara! Kuota terbatas, jangan sampai
+          ketinggalan promo terbaik kami.
+        </p>
+        <div
+          class="countdown-box-glow rounded-xl shadow-2xl p-4 sm:p-6 max-w-2xl mx-auto"
+        >
+          <h3
+            class="text-xl sm:text-2xl font-bold text-white mb-1 flex items-center justify-center gap-2"
+          >
+            <span class="relative flex h-3 w-3"
+              ><span
+                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"
+              ></span
+              ><span
+                class="relative inline-flex rounded-full h-3 w-3 bg-red-500"
+              ></span
+            ></span>
+            <span>WAKTU PROMO TERBATAS!</span>
+          </h3>
+          <p class="text-yellow-200 mb-3">Promo berakhir dalam:</p>
+          <div
+            id="main-countdown"
+            class="text-3xl sm:text-4xl md:text-5xl font-bold text-white"
+            data-tujuan="2025-07-05T23:59:59"
+          ></div>
+        </div>
+      </section>
+
+      <section id="bimbel" class="mb-20">
+        <h2 class="text-3xl font-black text-center text-gray-800 mb-2">
+          Program Unggulan Bimbel SpeedU
+        </h2>
+        <p class="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
+          Bimbingan intensif bersama pengajar berpengalaman.
+        </p>
+
+        <section class="my-16 px-4 card-animation">
+          <div
+            class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-8 lg:p-12 text-center relative overflow-hidden"
+          >
+            <div class="absolute -top-4 -left-4 w-24 h-24 text-blue-100">
+              <svg
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </div>
+            <h3
+              class="text-2xl md:text-3xl font-bold text-gray-800 mb-4 relative z-10"
+            >
+              KALAU UNTUK MASA DEPAN JANGAN MAU YANG MURAHAN
+            </h3>
+            <p
+              class="text-md md:text-lg text-gray-600 leading-relaxed relative z-10"
+            >
+              Kami percaya, persiapan menuju Sekolah Kedinasan adalah sebuah
+              investasi masa depan. Oleh karena itu, kami tidak menawarkan kelas
+              dengan peserta yang banyak. Kami menyediakan bimbingan berkualitas
+              eksklusif yang dirancang untuk memastikan pengajar bisa fokus
+              mengembangkan potensi peserta sehingga investasi pendidikan Anda
+              membuahkan hasil terbaik.
+            </p>
+          </div>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="program-card bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col transform hover:scale-105 transition-transform duration-300 card-animation"
+            data-nama-program="Kelas Online Eksklusif"
+            data-harga-diskon="500000"
+            data-harga-asli="850000"
+          >
+            <div class="p-6 lg:p-8">
+              <h3 class="text-2xl font-black text-primary">
+                KELAS ONLINE EKSLUSIF
+              </h3>
+              <p class="font-semibold text-secondary mb-4">#NGEBUTBELAJAR</p>
+              <div class="flex items-center gap-4 mb-4">
+                <span
+                  class="discount-badge text-sm font-bold bg-secondary text-gray-900 px-4 py-1 rounded-full"
+                ></span>
+                <p class="price-original text-lg sm:text-xl text-gray-500">
+                  Rp 850.000
+                </p>
+              </div>
+              <p class="text-4xl sm:text-5xl font-black text-gray-800 mb-1">
+                Rp 500.000
+              </p>
+              <p class="text-base sm:text-lg font-semibold text-gray-600 mb-4">
+                /15 Sesi
+              </p>
+              <div
+                class="bg-blue-50 border-l-4 border-primary text-primary p-3 rounded-r-lg mb-6"
+              >
+                <p class="font-bold">KELAS EKSKLUSIF- HANYA 10 ORANG!</p>
+                <p class="text-sm">
+                  Peserta hanya berisi 10 orang. Pengajar bisa lebih fokus pada
+                  perkembangan Anda.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 lg:px-8 pb-6 bg-gray-50 flex-grow">
+              <h4 class="font-bold text-lg mb-3 text-gray-800">
+                Benefit Unggulan:
+              </h4>
+              <ul class="space-y-3 text-gray-600">
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span>Pengajar Taruna Profesional >2 tahun pengalaman.</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span>Rekaman Belajar Zoom & Grup Diskusi Eksklusif.</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span>Bebas Konsultasi via WhatsApp.</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span>Materi Lengkap, Akurat & Terupdate.</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span
+                    ><span class="font-bold">GRATIS 5x Try Out</span> berbasis
+                    CAT dengan soal-soal yang bersumber dari Field Report
+                    (FR).</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span>Sheet Monitoring Progress Belajar.</span>
+                </li>
+              </ul>
+            </div>
+            <a
+              href="#"
+              class="btn-action block bg-primary text-white text-center font-bold text-xl py-4 mt-auto hover:bg-blue-700 transition-colors duration-300"
+              >Daftar Sekarang</a
+            >
+          </div>
+          <div
+            class="program-card bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col transform hover:scale-105 transition-transform duration-300 card-animation"
+            style="animation-delay: 0.1s"
+            data-nama-program="Kelas Online Eksklusif Prima"
+            data-harga-diskon="800000"
+            data-harga-asli="1500000"
+          >
+            <div class="p-6 lg:p-8 border-t-8 border-secondary">
+              <h3 class="text-2xl font-black text-primary">
+                KELAS ONLINE EKSLUSIF PRIMA
+              </h3>
+              <p class="font-semibold text-secondary mb-4">#NGEBUTBELAJAR</p>
+              <div class="flex items-center gap-4 mb-4">
+                <span
+                  class="discount-badge text-sm font-bold bg-secondary text-gray-900 px-4 py-1 rounded-full"
+                ></span>
+                <p class="price-original text-lg sm:text-xl text-gray-500">
+                  Rp 1.500.000
+                </p>
+              </div>
+              <p class="text-4xl sm:text-5xl font-black text-gray-800 mb-1">
+                Rp 800.000
+              </p>
+              <p class="text-base sm:text-lg font-semibold text-gray-600 mb-4">
+                /15 Sesi
+              </p>
+              <div
+                class="bg-yellow-50 border-l-4 border-secondary text-yellow-800 p-3 rounded-r-lg mb-6"
+              >
+                <p class="font-bold">KELAS PRIMA - HANYA 5 ORANG!</p>
+                <p class="text-sm">
+                  Kelas eksklusif hanya 5 orang. Pengajar dapat mengenal
+                  kebutuhan belajar Anda secara mendalam dan membantu Anda
+                  menguasai materi dengan cepat
+                </p>
+              </div>
+            </div>
+            <div class="px-6 lg:px-8 pb-6 bg-gray-50 flex-grow">
+              <h4 class="font-bold text-lg mb-3 text-gray-800">
+                Benefit Istimewa:
+              </h4>
+              <ul class="space-y-3 text-gray-600">
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span>Pengajar Taruna Profesional >2 tahun pengalaman.</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span>Rekaman Belajar Zoom & Grup Eksklusif.</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span>Bebas Konsultasi via WhatsApp.</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span>Materi Lengkap, Akurat & Terupdate (FR).</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span
+                    ><span class="font-bold">GRATIS 5x Try Out</span> berbasis
+                    CAT dengan soal-soal yang bersumber dari Field Report
+                    (FR).</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span>Sheet Monitoring Progress Belajar.</span>
+                </li>
+              </ul>
+            </div>
+            <a
+              href="#"
+              class="btn-action block bg-secondary text-gray-900 text-center font-bold text-xl py-4 mt-auto hover:bg-yellow-500 transition-colors duration-300 btn-glow"
+              >Ambil Kelas Prima</a
+            >
+          </div>
+          <div
+            class="program-card bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col transform hover:scale-105 transition-transform duration-300 card-animation"
+            style="animation-delay: 0.2s"
+            data-nama-program="Kelas Privat Intensif"
+            data-harga-diskon="2000000"
+            data-harga-asli="2500000"
+          >
+            <div class="p-6 lg:p-8">
+              <h3 class="text-2xl font-black text-primary">
+                KELAS PRIVAT INTENSIF
+              </h3>
+              <p class="font-semibold text-secondary mb-4">#NGEBUTBELAJAR</p>
+              <div class="flex items-center gap-4 mb-4">
+                <span
+                  class="discount-badge text-sm font-bold bg-secondary text-gray-900 px-4 py-1 rounded-full"
+                ></span>
+                <p class="price-original text-lg sm:text-xl text-gray-500">
+                  Rp 2.500.000
+                </p>
+              </div>
+              <p class="text-4xl sm:text-5xl font-black text-gray-800 mb-1">
+                Rp 2.000.000
+              </p>
+              <p class="text-base sm:text-lg font-semibold text-gray-600 mb-4">
+                / 10 sesi
+              </p>
+              <div
+                class="bg-blue-50 border-l-4 border-primary text-primary p-3 rounded-r-lg mb-6"
+              >
+                <p class="font-bold">AREA TANGERANG!</p>
+                <p class="text-sm">
+                  Bimbingan intensif dengan pengajar datang langsung ke rumah
+                  peserta.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 lg:px-8 pb-6 bg-gray-50 flex-grow">
+              <h4 class="font-bold text-lg mb-3 text-gray-800">
+                Benefit Eksklusif:
+              </h4>
+              <ul class="space-y-3 text-gray-600">
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span
+                    ><span class="font-bold">Bertemu Langsung</span> dengan
+                    pengajar.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span>Pengajar Taruna Profesional >2 tahun pengalaman.</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span>Bebas Konsultasi via WhatsApp.</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span>Materi Super Intensif & Personal.</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span
+                    ><span class="font-bold">GRATIS 5x Try Out</span> berbasis
+                    CAT dengan soal-soal yang bersumber dari Field Report
+                    (FR).</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span>Sheet Monitoring Progress Belajar.</span>
+                </li>
+              </ul>
+            </div>
+            <a
+              href="#"
+              class="btn-action block bg-primary text-white text-center font-bold text-xl py-4 mt-auto hover:bg-blue-700 transition-colors duration-300"
+              >Daftar Privat</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section id="tryout">
+        <h2 class="text-3xl font-black text-center text-gray-800 mb-2">
+          Paket Try Out SKD & SKB STMKG
+        </h2>
+        <p class="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
+          Uji kemampuanmu dengan soal-soal terupdate berbasis CAT dan lihat
+          peringkatmu.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="program-card bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col transform hover:scale-105 transition-transform duration-300 card-animation"
+            data-nama-program="3x Try Out SKD"
+            data-harga-diskon="25000"
+            data-harga-asli="30000"
+          >
+            <div class="p-6 lg:p-8">
+              <h3 class="text-2xl font-black text-primary">3x Try Out SKD</h3>
+              <p class="font-semibold text-secondary mb-4">#NGEBUTLATIHAN</p>
+              <div class="flex items-center gap-4 mb-4">
+                <span
+                  class="discount-badge text-sm font-bold bg-secondary text-gray-900 px-4 py-1 rounded-full"
+                ></span>
+                <p class="price-original text-lg sm:text-xl text-gray-500">
+                  Rp 30.000
+                </p>
+              </div>
+              <p class="text-4xl sm:text-5xl font-black text-gray-800 mb-1">
+                Rp 25.000
+              </p>
+              <div
+                class="bg-red-100 border-l-4 border-red-500 text-red-700 p-3 rounded-r-lg mt-4 mb-6"
+              >
+                <p class="font-bold">
+                  EARLY BIRD - 30 TERCEPAT! JIKA SUDAH MELEBIHI 30 PESERTA AKAN
+                  KEMBALI KE HARGA NORMAL.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 lg:px-8 pb-6 bg-gray-50 flex-grow">
+              <h4 class="font-bold text-lg mb-3 text-gray-800">
+                Apa yang Kamu Dapat?
+              </h4>
+              <ul class="space-y-3 text-gray-600">
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span>Bisa dikerjakan kapanpun.</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span>Soal terupdate dari Field Report (FR).</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span>TWK terupdate dengan fokus penalaran.</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span>Soal TIU standar terbaru.</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span
+                    >Soal TKP yang melatih intuisi dengan jawaban yang
+                    mirip.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span>Pembahasan Soal yang dapat diunduh.</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span>Join Grup Telegram diskusi.</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span
+                    ><span class="font-semibold">Perankingan Peserta</span
+                    >.</span
+                  >
+                </li>
+              </ul>
+            </div>
+            <a
+              href="#"
+              class="btn-action block bg-primary text-white text-center font-bold text-xl py-4 mt-auto hover:bg-blue-700 transition-colors duration-300"
+              >Daftar Try Out</a
+            >
+          </div>
+          <div
+            class="program-card bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col transform hover:scale-105 transition-transform duration-300 card-animation"
+            style="animation-delay: 0.1s"
+            data-nama-program="5x Try Out SKD"
+            data-harga-diskon="40000"
+            data-harga-asli="45000"
+          >
+            <div class="p-6 lg:p-8 border-t-8 border-secondary">
+              <h3 class="text-2xl font-black text-primary">5x Try Out SKD</h3>
+              <p class="font-semibold text-secondary mb-4">#NGEBUTLATIHAN</p>
+              <div class="flex items-center gap-4 mb-4">
+                <span
+                  class="discount-badge text-sm font-bold bg-secondary text-gray-900 px-4 py-1 rounded-full"
+                ></span>
+                <p class="price-original text-lg sm:text-xl text-gray-500">
+                  Rp 45.000
+                </p>
+              </div>
+              <p class="text-4xl sm:text-5xl font-black text-gray-800 mb-1">
+                Rp 40.000
+              </p>
+              <div
+                class="bg-red-100 border-l-4 border-red-500 text-red-700 p-3 rounded-r-lg mt-4 mb-6"
+              >
+                <p class="font-bold">
+                  EARLY BIRD - 30 TERCEPAT! JIKA SUDAH MELEBIHI 30 PESERTA AKAN
+                  KEMBALI KE HARGA NORMAL.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 lg:px-8 pb-6 bg-gray-50 flex-grow">
+              <h4 class="font-bold text-lg mb-3 text-gray-800">
+                Apa yang Kamu Dapat?
+              </h4>
+              <ul class="space-y-3 text-gray-600">
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span>Bisa dikerjakan kapanpun.</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span>Soal terupdate dari Field Report (FR).</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span>TWK terupdate dengan fokus penalaran.</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span>Soal TIU standar terbaru.</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span
+                    >Soal TKP yang melatih intuisi dengan jawaban yang
+                    mirip.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span>Pembahasan Soal yang dapat diunduh.</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span>Join Grup Telegram diskusi.</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span
+                    ><span class="font-semibold">Perankingan Peserta</span
+                    >.</span
+                  >
+                </li>
+              </ul>
+            </div>
+            <a
+              href="#"
+              class="btn-action block bg-secondary text-gray-900 text-center font-bold text-xl py-4 mt-auto hover:bg-yellow-500 transition-colors duration-300 btn-glow"
+              >Daftar Try Out</a
+            >
+          </div>
+          <div
+            class="program-card bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col transform hover:scale-105 transition-transform duration-300 card-animation"
+            style="animation-delay: 0.2s"
+            data-nama-program="3x Try Out SKB STMKG"
+            data-harga-diskon="40000"
+            data-harga-asli="45000"
+          >
+            <div class="p-6 lg:p-8">
+              <h3 class="text-2xl font-black text-primary">
+                3x Try Out SKB STMKG
+              </h3>
+              <p class="font-semibold text-secondary mb-4">#NGEBUTLATIHAN</p>
+              <div class="flex items-center gap-4 mb-4">
+                <span
+                  class="discount-badge text-sm font-bold bg-secondary text-gray-900 px-4 py-1 rounded-full"
+                ></span>
+                <p class="price-original text-lg sm:text-xl text-gray-500">
+                  Rp 45.000
+                </p>
+              </div>
+              <p class="text-4xl sm:text-5xl font-black text-gray-800 mb-1">
+                Rp 40.000
+              </p>
+              <div
+                class="bg-red-100 border-l-4 border-red-500 text-red-700 p-3 rounded-r-lg mt-4 mb-6"
+              >
+                <p class="font-bold">
+                  EARLY BIRD - 30 TERCEPAT! JIKA SUDAH MELEBIHI 30 PESERTA AKAN
+                  KEMBALI KE HARGA NORMAL.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 lg:px-8 pb-6 bg-gray-50 flex-grow">
+              <h4 class="font-bold text-lg mb-3 text-gray-800">
+                Apa yang Kamu Dapat?
+              </h4>
+              <ul class="space-y-3 text-gray-600">
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span>Bisa dikerjakan kapanpun.</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span>Soal terupdate dari Field Report (FR).</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span
+                    >Fokus Materi
+                    <span class="font-semibold">MTK, Fisika, B. Inggris</span
+                    >.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span>Pembahasan Soal yang dapat diunduh.</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span>Join Grup Telegram diskusi.</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary font-bold mr-2 mt-1">✔</span
+                  ><span
+                    ><span class="font-semibold">Perankingan Peserta</span
+                    >.</span
+                  >
+                </li>
+              </ul>
+            </div>
+            <a
+              href="#"
+              class="btn-action block bg-primary text-white text-center font-bold text-xl py-4 mt-auto hover:bg-blue-700 transition-colors duration-300"
+              >Daftar Try Out</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white mt-16">
+      <div class="container mx-auto px-6 py-4 text-center">
+        <p>&copy; 2024 Bimbel Speedu. Semua Hak Cipta Dilindungi.</p>
+      </div>
+    </footer>
+
+    <div
+      id="registration-modal"
+      class="fixed inset-0 bg-black bg-opacity-60 z-50 flex justify-center items-center p-4 hidden modal-backdrop opacity-0"
+    >
+      <div
+        class="modal-content bg-white rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden transform scale-95 opacity-0"
+      >
+        <div class="p-6 relative">
+          <button
+            id="close-modal-button"
+            class="absolute top-4 right-4 text-gray-400 hover:text-gray-700"
+          >
+            &times;
+          </button>
+          <h3
+            id="modal-program-title"
+            class="text-2xl font-bold text-primary mb-1"
+          >
+            Form Pendaftaran
+          </h3>
+          <p class="text-gray-600 mb-6">
+            Lengkapi data di bawah untuk melanjutkan.
+          </p>
+          <form id="registration-form"></form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // --- Countdown ---
+        function startCountdown() {
+          const countdownElement = document.getElementById("main-countdown");
+          if (!countdownElement) return;
+          const targetDate = new Date(
+            countdownElement.dataset.tujuan
+          ).getTime();
+          const interval = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            if (distance < 0) {
+              clearInterval(interval);
+              countdownElement.innerHTML = "PROMO TELAH BERAKHIR!";
+              countdownElement.classList.remove("text-white");
+              countdownElement.classList.add("text-red-500");
+              return;
+            }
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor(
+              (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+            );
+            const minutes = Math.floor(
+              (distance % (1000 * 60 * 60)) / (1000 * 60)
+            );
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            countdownElement.innerHTML = `
+                      <span class="tabular-nums">${String(days).padStart(
+                        2,
+                        "0"
+                      )}</span> <span class="text-sm sm:text-lg text-gray-300 font-semibold">hari</span>
+                      <span class="tabular-nums">${String(hours).padStart(
+                        2,
+                        "0"
+                      )}</span> <span class="text-sm sm:text-lg text-gray-300 font-semibold">jam</span>
+                      <span class="tabular-nums">${String(minutes).padStart(
+                        2,
+                        "0"
+                      )}</span> <span class="text-sm sm:text-lg text-gray-300 font-semibold">menit</span>
+                      <span class="tabular-nums">${String(seconds).padStart(
+                        2,
+                        "0"
+                      )}</span> <span class="text-sm sm:text-lg text-gray-300 font-semibold">detik</span>`;
+          }, 1000);
+        }
+
+        // --- Discount Calculation ---
+        function calculateDiscounts() {
+          document.querySelectorAll(".program-card").forEach((card) => {
+            const originalPrice = parseFloat(card.dataset.hargaAsli);
+            const discountedPrice = parseFloat(card.dataset.hargaDiskon);
+            const badge = card.querySelector(".discount-badge");
+            if (badge && originalPrice > discountedPrice) {
+              const percentage = Math.round(
+                ((originalPrice - discountedPrice) / originalPrice) * 100
+              );
+              badge.textContent = `DISKON ${percentage}%`;
+            } else if (badge) {
+              badge.style.display = "none";
+            }
+          });
+        }
+
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenuButton.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+
+        // **MODIFIED LOGIC STARTS HERE**
+
+        // Setup for ALL program buttons to link to WhatsApp
+        document
+          .querySelectorAll(".program-card .btn-action")
+          .forEach((button) => {
+            const card = button.closest(".program-card");
+            const phoneNumber = "6287778363537"; // The WhatsApp number
+            if (card) {
+              const programName = card.dataset.namaProgram;
+              const message = `Hai Kak, saya sangat tertarik dengan program *${programName}* dari Bimbel Speedu. Saya ingin mendaftar dan melanjutkan ke proses pembayaran. Mohon informasinya, terima kasih!`;
+              const encodedMessage = encodeURIComponent(message);
+              const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
+
+              // Set the button's attributes to act as a direct link
+              button.setAttribute("href", whatsappURL);
+              button.setAttribute("target", "_blank");
+
+              // Remove any previously attached event listeners that might prevent the link from working
+              button.addEventListener(
+                "click",
+                function (e) {
+                  // No need to prevent default, let the link open
+                },
+                true
+              );
+            }
+          });
+
+        // **MODIFIED LOGIC ENDS HERE**
+
+        // --- Initialize all functions ---
+        startCountdown();
+        calculateDiscounts();
+      });
+    </script>
+  </body>
+</html>
