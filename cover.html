@@ -16,6 +16,9 @@
       rel="stylesheet"
     />
 
+    <!-- html2canvas for Image Generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
     <style>
       /* Custom styles for the flyer */
       body {
@@ -60,6 +63,23 @@
         flex-grow: 1;
       }
 
+      /* Loading overlay style */
+      #loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        color: white;
+        font-size: 1.5rem;
+        flex-direction: column;
+      }
+
       /* Ensure the flyer looks good when printed */
       @media print {
         body {
@@ -72,18 +92,28 @@
           box-shadow: none;
           margin: 0;
         }
+        #loading-overlay {
+          display: none;
+        }
       }
     </style>
   </head>
   <body class="bg-gray-200 p-4 sm:p-8">
+    <!-- Loading Overlay -->
+    <div id="loading-overlay">
+      <p>Mempersiapkan gambar...</p>
+      <p class="text-sm mt-2">Harap tunggu sebentar.</p>
+    </div>
+
     <!-- This is the main container for the flyer content -->
-    <div class="flyer-a4 bg-white overflow-hidden">
+    <div id="flyer-content" class="flyer-a4 bg-white overflow-hidden">
       <!-- Header Section -->
       <header class="header-gradient text-white p-8 text-center relative">
         <img
           src="speedulogohitam.png"
           alt="Logo Speedu"
           class="mx-auto mb-4 h-12"
+          onerror="this.onerror=null; this.src='https://placehold.co/200x50?text=Logo';"
         />
         <h1
           class="text-3xl md:text-4xl font-black leading-tight tracking-tight"
@@ -389,5 +419,46 @@
         </div>
       </footer>
     </div>
+
+    <script>
+      // This script automatically downloads the flyer content as a high-resolution PNG image when the page loads.
+      window.onload = function () {
+        // Select the element to be converted to an image.
+        const flyerElement = document.getElementById("flyer-content");
+        const loadingOverlay = document.getElementById("loading-overlay");
+
+        console.log("Page loaded. Starting image generation...");
+
+        // Use html2canvas to render the element.
+        // { useCORS: true } allows rendering images from other domains (like the QR code).
+        // The scale option increases the resolution of the capture for a clearer image.
+        html2canvas(flyerElement, { useCORS: true, scale: 3 })
+          .then((canvas) => {
+            console.log("Canvas created. Generating image for download...");
+
+            // Create a temporary link element.
+            const link = document.createElement("a");
+
+            // Set the download attribute with a filename.
+            link.download = "Flyer-Promo-Speedu.png";
+
+            // Convert the canvas to a data URL and set it as the href for the link.
+            link.href = canvas.toDataURL("image/png");
+
+            // Trigger a click on the link to start the download.
+            link.click();
+
+            console.log("Image download initiated.");
+
+            // Hide the loading overlay after the process is complete.
+            loadingOverlay.style.display = "none";
+          })
+          .catch((error) => {
+            console.error("Error generating image:", error);
+            loadingOverlay.innerHTML =
+              "<p>Maaf, terjadi kesalahan saat membuat gambar.</p>";
+          });
+      };
+    </script>
   </body>
 </html>
