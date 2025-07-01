@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flyer Promo Spesial - Bimbel Speedu #NgebutBelajar</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Custom styles for the flyer */
+      body {
+        font-family: "Poppins", sans-serif;
+        -webkit-print-color-adjust: exact; /* Ensures background colors are printed */
+        color-adjust: exact;
+      }
+
+      /* A4 Aspect Ratio Box: 210mm x 297mm. We'll use a fixed width to simulate this. */
+      .flyer-a4 {
+        width: 8.27in; /* 210mm */
+        min-height: 11.69in; /* 297mm */
+        margin: auto;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Custom gradient for the header */
+      .header-gradient {
+        background: linear-gradient(135deg, #0052b3, #0061d3, #0b3a7d);
+      }
+
+      /* Custom strikethrough with a hand-drawn feel */
+      .price-original {
+        position: relative;
+        display: inline-block;
+      }
+      .price-original::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -2%;
+        right: -2%;
+        height: 3px;
+        transform: translateY(-50%) rotate(-2deg);
+        background-color: #ef4444; /* red-500 */
+        border-radius: 2px;
+      }
+
+      main {
+        flex-grow: 1;
+      }
+
+      /* Ensure the flyer looks good when printed */
+      @media print {
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        .flyer-a4 {
+          width: 100%;
+          min-height: 100vh;
+          box-shadow: none;
+          margin: 0;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-200 p-4 sm:p-8">
+    <!-- This is the main container for the flyer content -->
+    <div class="flyer-a4 bg-white overflow-hidden">
+      <!-- Header Section -->
+      <header class="header-gradient text-white p-8 text-center relative">
+        <img
+          src="speedulogohitam.png"
+          alt="Logo Speedu"
+          class="mx-auto mb-4 h-12"
+        />
+        <h1
+          class="text-5xl md:text-6xl font-black leading-tight tracking-tight"
+        >
+          PROMO SPESIAL
+        </h1>
+        <p class="text-3xl font-bold text-yellow-300 mt-1">#NGEBUTBELAJAR</p>
+        <p class="mt-3 max-w-2xl mx-auto text-lg text-blue-100">
+          Wujudkan Mimpimu Menjadi Abdi Negara! Persiapan Terbaik Menuju Sekolah
+          Kedinasan Impian.
+        </p>
+      </header>
+
+      <!-- Main Content Area -->
+      <main class="p-6 md:p-8">
+        <!-- Programs Section -->
+        <section>
+          <h2 class="text-center text-3xl font-extrabold text-gray-800 mb-6">
+            Program Bimbingan Unggulan Kami
+          </h2>
+          <div class="grid grid-cols-1 gap-6">
+            <!-- Kelas Online Eksklusif Prima -->
+            <div
+              class="bg-yellow-50 rounded-xl shadow-xl p-6 border-2 border-yellow-400 flex flex-col"
+            >
+              <h3 class="text-2xl font-black text-yellow-800">
+                KELAS ONLINE EKSLUSIF PRIMA
+              </h3>
+              <p class="text-md font-semibold text-gray-500 mt-1">
+                Kelas Super Fokus 5 Orang (Best Seller!)
+              </p>
+              <div class="my-4">
+                <span
+                  class="price-original text-xl text-gray-400 font-semibold mr-3 whitespace-nowrap"
+                  >Rp 1.500.000</span
+                >
+                <span
+                  class="text-4xl font-black text-gray-800 whitespace-nowrap"
+                  >Rp 800.000</span
+                >
+              </div>
+              <h4 class="font-bold text-gray-800 mt-2 mb-2">
+                Benefit Istimewa:
+              </h4>
+              <ul class="space-y-2 text-sm text-gray-700 flex-grow">
+                <li class="flex items-start">
+                  <svg
+                    class="w-5 h-5 text-green-500 mr-2 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span
+                    ><span class="font-semibold"
+                      >Semua benefit Kelas Eksklusif</span
+                    >
+                    dengan fokus dan perhatian mendalam.</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Kelas Online Eksklusif -->
+            <div
+              class="bg-blue-50 rounded-xl shadow-lg p-6 border-t-4 border-blue-500 flex flex-col"
+            >
+              <h3 class="text-2xl font-black text-blue-700">
+                KELAS ONLINE EKSLUSIF
+              </h3>
+              <p class="text-md font-semibold text-gray-500 mt-1">
+                Kelas Fokus 10 Orang
+              </p>
+              <div class="my-4">
+                <span
+                  class="price-original text-xl text-gray-400 font-semibold mr-3 whitespace-nowrap"
+                  >Rp 850.000</span
+                >
+                <span
+                  class="text-4xl font-black text-gray-800 whitespace-nowrap"
+                  >Rp 500.000</span
+                >
+              </div>
+              <h4 class="font-bold text-gray-800 mt-2 mb-2">
+                Benefit Unggulan:
+              </h4>
+              <ul class="space-y-2 text-sm text-gray-700 flex-grow">
+                <li class="flex items-start">
+                  <svg
+                    class="w-5 h-5 text-green-500 mr-2 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span
+                    ><span class="font-semibold">Pengajar Profesional</span> >2
+                    tahun pengalaman.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="w-5 h-5 text-green-500 mr-2 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span>Rekaman Belajar & Grup Diskusi Eksklusif.</span>
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="w-5 h-5 text-green-500 mr-2 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span>Bebas Konsultasi via WhatsApp.</span>
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="w-5 h-5 text-green-500 mr-2 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span>Materi Lengkap, Akurat & Terupdate (FR).</span>
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="w-5 h-5 text-green-500 mr-2 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span
+                    ><span class="font-semibold">GRATIS 5x Try Out</span>
+                    Berbasis CAT.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="w-5 h-5 text-green-500 mr-2 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span>Sheet Monitoring Progress Belajar.</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Kelas Privat Intensif -->
+            <div
+              class="bg-gray-800 text-white rounded-xl shadow-lg p-6 border-t-4 border-yellow-400 flex flex-col"
+            >
+              <h3 class="text-2xl font-black text-white">
+                KELAS PRIVAT INTENSIF
+              </h3>
+              <p class="text-md font-semibold text-gray-300 mt-1">
+                1-on-1 di Rumah (Area Tangerang)
+              </p>
+              <div class="my-4">
+                <span
+                  class="price-original text-xl text-gray-400 font-semibold mr-3 whitespace-nowrap"
+                  >Rp 2.500.000</span
+                >
+                <span class="text-4xl font-black text-white whitespace-nowrap"
+                  >Rp 2.000.000</span
+                >
+              </div>
+              <h4 class="font-bold text-gray-100 mt-2 mb-2">
+                Benefit Eksklusif:
+              </h4>
+              <ul class="space-y-2 text-sm text-gray-300 flex-grow">
+                <li class="flex items-start">
+                  <svg
+                    class="w-5 h-5 text-yellow-400 mr-2 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span
+                    ><span class="font-semibold">Bertemu Langsung</span> dengan
+                    pengajar.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="w-5 h-5 text-yellow-400 mr-2 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span>Materi Super Intensif & Personal.</span>
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="w-5 h-5 text-yellow-400 mr-2 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span
+                    ><span class="font-semibold">Plus semua benefit</span> dari
+                    Kelas Online Eksklusif.</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer / Call to Action -->
+      <footer class="bg-gray-800 text-white p-6 mt-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+          <div class="md:col-span-2">
+            <h3 class="text-3xl font-black text-yellow-300">
+              DAFTAR SEKARANG!
+            </h3>
+            <p class="text-lg mt-1 text-gray-200">
+              Kuota promo sangat terbatas. Amankan kursimu dengan mendaftar
+              melalui link di bawah ini.
+            </p>
+            <div class="mt-4 flex items-center bg-gray-900 rounded-lg p-3">
+              <svg
+                class="w-8 h-8 text-blue-400 mr-3"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
+                ></path>
+              </svg>
+              <span class="text-2xl font-bold tracking-wider"
+                >s.id/speedupromo</span
+              >
+            </div>
+          </div>
+          <div class="flex justify-center items-center">
+            <a href="https://s.id/speedupromo" target="_blank">
+              <img
+                class="rounded-lg bg-white p-1"
+                src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://s.id/speedupromo"
+                alt="QR Code Pendaftaran"
+              />
+            </a>
+          </div>
+        </div>
+        <div
+          class="text-center border-t border-gray-700 pt-4 mt-4 text-gray-400 text-sm"
+        >
+          &copy; 2024 Bimbel Speedu. Semua Hak Cipta Dilindungi.
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
