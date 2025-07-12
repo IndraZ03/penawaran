@@ -43,17 +43,23 @@
       .price-original {
         position: relative;
         display: inline-block;
+        /* Add some horizontal padding to ensure the strikethrough doesn't cut off text */
+        padding: 0 4px; /* Added padding here */
+        margin: 0 -4px; /* Counteract padding to keep visual alignment */
       }
       .price-original::after {
         content: "";
         position: absolute;
         top: 50%;
-        left: -2%;
-        right: -2%;
+        /* Adjusted left/right for better containment */
+        left: 0; /* Changed from -2% */
+        right: 0; /* Changed from -2% */
         height: 3px;
         transform: translateY(-50%) rotate(-2deg);
         background-color: #ef4444; /* red-500 */
         border-radius: 2px;
+        /* Ensure it's above the text, but below the main card content if needed */
+        z-index: 1;
       }
 
       /* Tag styling */
@@ -153,11 +159,11 @@
                 Kelas Online SKB STMKG Eksklusif
               </h3>
               <div class="my-4">
-                <p
+                <span
                   class="price-original text-xl text-gray-400 font-semibold mr-3 whitespace-nowrap"
                 >
                   Rp 800.000
-                </p>
+                </span>
                 <p class="text-4xl font-black text-gray-800 whitespace-nowrap">
                   Rp 525.000
                 </p>
@@ -258,11 +264,11 @@
                 Kelas Online SKB STMKG Prima
               </h3>
               <div class="my-4">
-                <p
+                <span
                   class="price-original text-xl text-gray-400 font-semibold mr-3 whitespace-nowrap"
                 >
-                  Rp 1.000.000
-                </p>
+                  Rp 1.500.000
+                </span>
                 <p class="text-4xl font-black text-gray-800 whitespace-nowrap">
                   Rp 825.000
                 </p>
@@ -366,11 +372,11 @@
                 Kelas Privat Offline SKB STMKG
               </h3>
               <div class="my-4">
-                <p
+                <span
                   class="price-original text-xl text-gray-400 font-semibold mr-3 whitespace-nowrap"
                 >
                   Rp 2.500.000
-                </p>
+                </span>
                 <p class="text-4xl font-black text-white whitespace-nowrap">
                   Rp 2.000.000
                 </p>
@@ -492,7 +498,7 @@
                 ></path>
               </svg>
               <span class="text-2xl font-bold tracking-wider"
-                >s.id/speedupromo</span
+                >speedukedinasan.online</span
               >
             </div>
           </div>
