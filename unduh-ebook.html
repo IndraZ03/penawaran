@@ -38,15 +38,20 @@
     <div class="container mx-auto px-4 py-12 md:py-20">
       <!-- Header Section -->
       <header class="text-center mb-8">
-        <img src="https://placehold.co/260x130/0068e1/FFFFFF?text=LOGO+ANDA" alt="Logo SPEEDU" class="mx-auto h-24 mb-6" />
+        <img
+          src="https://placehold.co/260x130/0068e1/FFFFFF?text=LOGO+ANDA"
+          alt="Logo SPEEDU"
+          class="mx-auto h-24 mb-6"
+        />
         <h1 class="text-4xl md:text-5xl font-extrabold mb-3 text-white">
           Dapatkan E-book Gratis Anda!
         </h1>
         <p class="text-lg text-gray-200 max-w-2xl mx-auto">
-          Satu langkah lagi untuk mendapatkan "PANDUAN #NGEBUTBELAJAR PERSIAPAN TES SEKOLAH KEDINASAN 2025". Cukup isi data di bawah ini.
+          Satu langkah lagi untuk mendapatkan "PANDUAN #NGEBUTBELAJAR PERSIAPAN
+          TES SEKOLAH KEDINASAN 2025". Cukup isi data di bawah ini.
         </p>
       </header>
-      
+
       <!-- E-book Preview -->
       <section id="ebook-preview" class="w-full max-w-sm mx-auto mb-12">
         <div class="p-4 rounded-2xl shadow-2xl">
@@ -66,19 +71,51 @@
           <form id="ebookForm" class="space-y-6">
             <!-- Data Diri -->
             <div>
-              <label for="fullName" class="block mb-2 text-lg font-semibold text-gray-200">Nama Lengkap</label>
-              <input type="text" id="fullName" name="Nama" class="w-full p-3 bg-gray-900/50 border-2 border-gray-500 text-white rounded-xl focus:bg-gray-800/50 focus:border-yellow-400 focus:ring-0 transition" placeholder="Tulis nama lengkap Anda..." required />
+              <label
+                for="fullName"
+                class="block mb-2 text-lg font-semibold text-gray-200"
+                >Nama Lengkap</label
+              >
+              <input
+                type="text"
+                id="fullName"
+                name="Nama"
+                class="w-full p-3 bg-gray-900/50 border-2 border-gray-500 text-white rounded-xl focus:bg-gray-800/50 focus:border-yellow-400 focus:ring-0 transition"
+                placeholder="Tulis nama lengkap Anda..."
+                required
+              />
             </div>
             <div>
-              <label for="noWhatsapp" class="block mb-2 text-lg font-semibold text-gray-200">Nomor WhatsApp</label>
-              <input type="tel" id="noWhatsapp" name="No_Whatsapp" class="w-full p-3 bg-gray-900/50 border-2 border-gray-500 text-white rounded-xl focus:bg-gray-800/50 focus:border-yellow-400 focus:ring-0 transition" placeholder="Contoh: 08123456789" required />
-              <p id="whatsappError" class="text-yellow-300 text-xs mt-2 hidden">Mohon masukkan nomor Indonesia yang valid.</p>
+              <label
+                for="noWhatsapp"
+                class="block mb-2 text-lg font-semibold text-gray-200"
+                >Nomor WhatsApp</label
+              >
+              <input
+                type="tel"
+                id="noWhatsapp"
+                name="No_Whatsapp"
+                class="w-full p-3 bg-gray-900/50 border-2 border-gray-500 text-white rounded-xl focus:bg-gray-800/50 focus:border-yellow-400 focus:ring-0 transition"
+                placeholder="Contoh: 08123456789"
+                required
+              />
+              <p id="whatsappError" class="text-yellow-300 text-xs mt-2 hidden">
+                Mohon masukkan nomor Indonesia yang valid.
+              </p>
             </div>
-            
+
             <!-- Pilihan Sekolah & SKB -->
             <div>
-              <label for="sekolahKedinasan" class="block mb-2 text-lg font-semibold text-gray-200">Sekolah Kedinasan Pilihan</label>
-              <select id="sekolahKedinasan" name="Sekolah_Pilihan" class="w-full p-3 bg-gray-900/50 border-2 border-gray-500 text-white rounded-xl focus:bg-gray-800/50 focus:border-yellow-400 focus:ring-0 transition">
+              <label
+                for="sekolahKedinasan"
+                class="block mb-2 text-lg font-semibold text-gray-200"
+                >Sekolah Kedinasan Pilihan</label
+              >
+              <select
+                id="sekolahKedinasan"
+                name="Sekolah_Pilihan"
+                class="w-full p-3 bg-gray-900/50 border-2 border-gray-500 text-white rounded-xl focus:bg-gray-800/50 focus:border-yellow-400 focus:ring-0 transition"
+              >
                 <option selected>Pilih salah satu...</option>
                 <option value="IPDN">IPDN</option>
                 <option value="STAN">STAN</option>
@@ -90,30 +127,77 @@
                 <option value="Lainnya">Lainnya</option>
               </select>
             </div>
-            
+
             <!-- Target Nilai SKB (Conditional) -->
             <div id="skbTargetContainer" class="hidden">
-              <label for="skbTarget" class="block mb-2 text-lg font-semibold text-gray-200">Target Nilai SKB STMKG</label>
-              <input type="number" id="skbTarget" name="Target_Nilai_SKB" class="w-full p-3 bg-gray-900/50 border-2 border-gray-500 text-white rounded-xl focus:bg-gray-800/50 focus:border-yellow-400 focus:ring-0 transition" placeholder="Contoh: 80" />
+              <label
+                for="skbTarget"
+                class="block mb-2 text-lg font-semibold text-gray-200"
+                >Target Nilai SKB STMKG</label
+              >
+              <input
+                type="number"
+                id="skbTarget"
+                name="Target_Nilai_SKB"
+                class="w-full p-3 bg-gray-900/50 border-2 border-gray-500 text-white rounded-xl focus:bg-gray-800/50 focus:border-yellow-400 focus:ring-0 transition"
+                placeholder="Contoh: 80"
+              />
             </div>
 
             <!-- Keyakinan & Target SKD -->
             <div>
-                <label for="confidenceLevel" class="block mb-2 text-lg font-semibold text-gray-200">Tingkat Keyakinan Lulus: <span id="confidenceValue" class="font-bold text-yellow-400">50%</span></label>
-                <input id="confidenceLevel" type="range" min="0" max="100" value="50" name="Keyakinan_Lulus" class="w-full h-3 bg-gray-900/50 rounded-lg appearance-none cursor-pointer" />
+              <label
+                for="confidenceLevel"
+                class="block mb-2 text-lg font-semibold text-gray-200"
+                >Tingkat Keyakinan Lulus:
+                <span id="confidenceValue" class="font-bold text-yellow-400"
+                  >50%</span
+                ></label
+              >
+              <input
+                id="confidenceLevel"
+                type="range"
+                min="0"
+                max="100"
+                value="50"
+                name="Keyakinan_Lulus"
+                class="w-full h-3 bg-gray-900/50 rounded-lg appearance-none cursor-pointer"
+              />
             </div>
             <div>
-                <label for="expectedScore" class="block mb-2 text-lg font-semibold text-gray-200">Target Skor SKD</label>
-                <input type="number" id="expectedScore" name="Target_Skor_SKD" min="0" max="550" class="w-full p-3 bg-gray-900/50 border-2 border-gray-500 text-white rounded-xl focus:bg-gray-800/50 focus:border-yellow-400 focus:ring-0 transition" placeholder="Contoh: 450" required />
+              <label
+                for="expectedScore"
+                class="block mb-2 text-lg font-semibold text-gray-200"
+                >Target Skor SKD</label
+              >
+              <input
+                type="number"
+                id="expectedScore"
+                name="Target_Skor_SKD"
+                min="0"
+                max="550"
+                class="w-full p-3 bg-gray-900/50 border-2 border-gray-500 text-white rounded-xl focus:bg-gray-800/50 focus:border-yellow-400 focus:ring-0 transition"
+                placeholder="Contoh: 450"
+                required
+              />
             </div>
 
             <!-- Submit Button -->
-            <button type="submit" id="submitButton" class="w-full text-blue-900 bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-bold rounded-xl text-lg px-5 py-4 text-center transition duration-300 ease-in-out transform hover:scale-105">
-              <span id="buttonText"><i class="fas fa-download mr-2"></i> KIRIM & UNDUH E-BOOK</span>
+            <button
+              type="submit"
+              id="submitButton"
+              class="w-full text-blue-900 bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-bold rounded-xl text-lg px-5 py-4 text-center transition duration-300 ease-in-out transform hover:scale-105"
+            >
+              <span id="buttonText"
+                ><i class="fas fa-download mr-2"></i> KIRIM & UNDUH E-BOOK</span
+              >
               <i id="buttonSpinner" class="fas fa-spinner fa-spin hidden"></i>
             </button>
           </form>
-          <div id="formMessage" class="mt-6 text-center p-4 rounded-lg hidden"></div>
+          <div
+            id="formMessage"
+            class="mt-6 text-center p-4 rounded-lg hidden"
+          ></div>
         </div>
       </main>
     </div>
@@ -191,22 +275,25 @@
         const noWhatsappInput = document.getElementById("noWhatsapp");
         const whatsappError = document.getElementById("whatsappError");
         const sekolahSelect = document.getElementById("sekolahKedinasan");
-        const skbTargetContainer = document.getElementById("skbTargetContainer");
+        const skbTargetContainer =
+          document.getElementById("skbTargetContainer");
         const skbTargetInput = document.getElementById("skbTarget");
         const confidenceSlider = document.getElementById("confidenceLevel");
         const confidenceValue = document.getElementById("confidenceValue");
 
         // GANTI DENGAN URL GOOGLE APPS SCRIPT ANDA
-        const scriptURL = 'GANTI_DENGAN_URL_ANDA';
-        const ebookURL = 'https://drive.usercontent.google.com/download?id=1IwvA19bqImRE-UyeWJ8AYJzAZH5n9pt-&export=download&authuser=0&confirm=t&uuid=813b4156-01bb-4774-a7dd-a504278e0b66&at=AN8xHop7jo9UQyYKHodvei_8Ikjc:1751453394672';
+        const scriptURL =
+          "https://script.google.com/macros/s/AKfycbxraIkHAGNhMWe6Xdojy3WMgwCiI1XJ270ujAb4W0J04AQzT0PVY0E23c7RO9d2Iqs/exec";
+        const ebookURL =
+          "https://drive.usercontent.google.com/download?id=1B7z0_k-iicmTobhv-gWI4OX8unI5X6zT&export=download&authuser=0&confirm=t&uuid=e94df4f7-a660-46a6-a0c8-07e08923da1c&at=AN8xHoo5P3SO8vDhYlPgmjrSjVMb:1752504794775";
 
         // Show/hide SKB target field
-        sekolahSelect.addEventListener('change', (e) => {
-            const isSkbStmkg = e.target.value === 'STMKG';
-            skbTargetContainer.classList.toggle('hidden', !isSkbStmkg);
-            skbTargetInput.required = isSkbStmkg;
+        sekolahSelect.addEventListener("change", (e) => {
+          const isSkbStmkg = e.target.value === "STMKG";
+          skbTargetContainer.classList.toggle("hidden", !isSkbStmkg);
+          skbTargetInput.required = isSkbStmkg;
         });
-        
+
         // Update confidence slider display
         confidenceSlider.addEventListener("input", (e) => {
           confidenceValue.textContent = `${e.target.value}%`;
@@ -217,13 +304,13 @@
 
           // Validasi Nomor WhatsApp
           if (!/^(^\+62|62|08)(\d{8,15})$/.test(noWhatsappInput.value)) {
-              whatsappError.classList.remove('hidden');
-              noWhatsappInput.focus();
-              return;
+            whatsappError.classList.remove("hidden");
+            noWhatsappInput.focus();
+            return;
           } else {
-              whatsappError.classList.add('hidden');
+            whatsappError.classList.add("hidden");
           }
-          
+
           setLoading(true);
 
           const formData = new FormData(form);
@@ -232,31 +319,34 @@
             dataObject[key] = value;
           });
 
-          fetch(scriptURL, { 
-            method: 'POST',
-            mode: 'cors',
-            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-            body: JSON.stringify(dataObject)
+          fetch(scriptURL, {
+            method: "POST",
+            mode: "cors",
+            headers: { "Content-Type": "text/plain;charset=utf-8" },
+            body: JSON.stringify(dataObject),
           })
-          .then(response => response.json())
-          .then(data => {
-            if (data.result === "success") {
-              displayMessage('success', 'Berhasil! E-book Anda sedang diunduh...');
-              window.location.href = ebookURL;
-              form.reset();
-              skbTargetContainer.classList.add('hidden');
-              confidenceValue.textContent = '50%';
-            } else {
-              throw new Error(data.message || "Terjadi kesalahan.");
-            }
-          })
-          .catch(error => {
-            console.error("Error!", error.message);
-            displayMessage('error', `Pengiriman gagal: ${error.message}`);
-          })
-          .finally(() => {
-            setLoading(false);
-          });
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.result === "success") {
+                displayMessage(
+                  "success",
+                  "Berhasil! E-book Anda sedang diunduh..."
+                );
+                window.location.href = ebookURL;
+                form.reset();
+                skbTargetContainer.classList.add("hidden");
+                confidenceValue.textContent = "50%";
+              } else {
+                throw new Error(data.message || "Terjadi kesalahan.");
+              }
+            })
+            .catch((error) => {
+              console.error("Error!", error.message);
+              displayMessage("error", `Pengiriman gagal: ${error.message}`);
+            })
+            .finally(() => {
+              setLoading(false);
+            });
         });
 
         function setLoading(isLoading) {
@@ -274,7 +364,7 @@
             formMessage.classList.add("bg-red-500/30", "text-red-200");
           }
           setTimeout(() => {
-            formMessage.classList.add('hidden');
+            formMessage.classList.add("hidden");
           }, 5000);
         }
       });
