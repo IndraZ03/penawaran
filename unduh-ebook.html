@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unduh E-book Gratis SKD - SpeedU</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #0068e1; /* Warna biru utama */
+        color: #ffffff;
+      }
+      .content-card {
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        background-color: rgba(0, 0, 0, 0.25);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 1.5rem; /* 24px */
+        box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <div class="container mx-auto px-4 py-12 md:py-20">
+      <!-- Header Section -->
+      <header class="text-center mb-8">
+        <img src="https://placehold.co/260x130/0068e1/FFFFFF?text=LOGO+ANDA" alt="Logo SPEEDU" class="mx-auto h-24 mb-6" />
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-3 text-white">
+          Dapatkan E-book Gratis Anda!
+        </h1>
+        <p class="text-lg text-gray-200 max-w-2xl mx-auto">
+          Satu langkah lagi untuk mendapatkan "PANDUAN #NGEBUTBELAJAR PERSIAPAN TES SEKOLAH KEDINASAN 2025". Cukup isi data di bawah ini.
+        </p>
+      </header>
+      
+      <!-- E-book Preview -->
+      <section id="ebook-preview" class="w-full max-w-sm mx-auto mb-12">
+        <div class="p-4 rounded-2xl shadow-2xl">
+          <img
+            id="ebookCover"
+            src="https://placehold.co/800x1131/004a9e/FFFFFF/png?text=RAHASIA+LOLOS%0A%0ATES+SKD%0A2025%0A%0A%3Cem%3EStrategi+Jitu+%26+Bedah+Soal+Lengkap%3C/em%3E%0A%0A%0A%0A%0A%0A%0ADisusun+oleh%0ASPEEDU"
+            alt="Cover E-book SKD"
+            class="rounded-xl w-full h-auto object-cover shadow-lg"
+            onerror="this.onerror=null;this.src='https://placehold.co/800x1131/004a9e/FFFFFF?text=Cover+E-book';"
+          />
+        </div>
+      </section>
+
+      <!-- Form Section -->
+      <main class="max-w-3xl mx-auto">
+        <div class="content-card p-8 md:p-12">
+          <form id="ebookForm" class="space-y-6">
+            <!-- Data Diri -->
+            <div>
+              <label for="fullName" class="block mb-2 text-lg font-semibold text-gray-200">Nama Lengkap</label>
+              <input type="text" id="fullName" name="Nama" class="w-full p-3 bg-gray-900/50 border-2 border-gray-500 text-white rounded-xl focus:bg-gray-800/50 focus:border-yellow-400 focus:ring-0 transition" placeholder="Tulis nama lengkap Anda..." required />
+            </div>
+            <div>
+              <label for="noWhatsapp" class="block mb-2 text-lg font-semibold text-gray-200">Nomor WhatsApp</label>
+              <input type="tel" id="noWhatsapp" name="No_Whatsapp" class="w-full p-3 bg-gray-900/50 border-2 border-gray-500 text-white rounded-xl focus:bg-gray-800/50 focus:border-yellow-400 focus:ring-0 transition" placeholder="Contoh: 08123456789" required />
+              <p id="whatsappError" class="text-yellow-300 text-xs mt-2 hidden">Mohon masukkan nomor Indonesia yang valid.</p>
+            </div>
+            
+            <!-- Pilihan Sekolah & SKB -->
+            <div>
+              <label for="sekolahKedinasan" class="block mb-2 text-lg font-semibold text-gray-200">Sekolah Kedinasan Pilihan</label>
+              <select id="sekolahKedinasan" name="Sekolah_Pilihan" class="w-full p-3 bg-gray-900/50 border-2 border-gray-500 text-white rounded-xl focus:bg-gray-800/50 focus:border-yellow-400 focus:ring-0 transition">
+                <option selected>Pilih salah satu...</option>
+                <option value="IPDN">IPDN</option>
+                <option value="STAN">STAN</option>
+                <option value="STIN">STIN</option>
+                <option value="Polstat STIS">Polstat STIS</option>
+                <option value="Kemenhub">Kemenhub</option>
+                <option value="Poltek SSN">Poltek SSN</option>
+                <option value="STMKG">STMKG</option>
+                <option value="Lainnya">Lainnya</option>
+              </select>
+            </div>
+            
+            <!-- Target Nilai SKB (Conditional) -->
+            <div id="skbTargetContainer" class="hidden">
+              <label for="skbTarget" class="block mb-2 text-lg font-semibold text-gray-200">Target Nilai SKB STMKG</label>
+              <input type="number" id="skbTarget" name="Target_Nilai_SKB" class="w-full p-3 bg-gray-900/50 border-2 border-gray-500 text-white rounded-xl focus:bg-gray-800/50 focus:border-yellow-400 focus:ring-0 transition" placeholder="Contoh: 80" />
+            </div>
+
+            <!-- Keyakinan & Target SKD -->
+            <div>
+                <label for="confidenceLevel" class="block mb-2 text-lg font-semibold text-gray-200">Tingkat Keyakinan Lulus: <span id="confidenceValue" class="font-bold text-yellow-400">50%</span></label>
+                <input id="confidenceLevel" type="range" min="0" max="100" value="50" name="Keyakinan_Lulus" class="w-full h-3 bg-gray-900/50 rounded-lg appearance-none cursor-pointer" />
+            </div>
+            <div>
+                <label for="expectedScore" class="block mb-2 text-lg font-semibold text-gray-200">Target Skor SKD</label>
+                <input type="number" id="expectedScore" name="Target_Skor_SKD" min="0" max="550" class="w-full p-3 bg-gray-900/50 border-2 border-gray-500 text-white rounded-xl focus:bg-gray-800/50 focus:border-yellow-400 focus:ring-0 transition" placeholder="Contoh: 450" required />
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" id="submitButton" class="w-full text-blue-900 bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-bold rounded-xl text-lg px-5 py-4 text-center transition duration-300 ease-in-out transform hover:scale-105">
+              <span id="buttonText"><i class="fas fa-download mr-2"></i> KIRIM & UNDUH E-BOOK</span>
+              <i id="buttonSpinner" class="fas fa-spinner fa-spin hidden"></i>
+            </button>
+          </form>
+          <div id="formMessage" class="mt-6 text-center p-4 rounded-lg hidden"></div>
+        </div>
+      </main>
+    </div>
+
+    <!-- 
+    ================================================================
+    PETUNJUK GOOGLE APPS SCRIPT UNTUK FORM E-BOOK
+    ================================================================
+    
+    Langkah 1: Buat Google Sheet Baru
+    1. Buka sheets.google.com dan buat spreadsheet kosong baru.
+    2. Di baris pertama, buat header kolom **PERSIS** seperti ini:
+       `Timestamp`, `Nama`, `No_Whatsapp`, `Sekolah_Pilihan`, `Target_Nilai_SKB`, `Keyakinan_Lulus`, `Target_Skor_SKD`
+
+    Langkah 2: Buat Google Apps Script
+    1. Di Google Sheet, buka Ekstensi > Apps Script.
+    2. Hapus semua kode contoh, lalu salin dan tempel kode di bawah ini.
+    
+    ----------------------------------------------------------------
+    
+    function doPost(e) {
+      try {
+        var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Sheet1"); // Pastikan nama sheet benar
+        
+        var data = JSON.parse(e.postData.contents);
+        
+        // Cek jika Target_Nilai_SKB ada atau tidak, jika tidak isi dengan 0
+        var targetSKB = data.Target_Nilai_SKB || "0";
+
+        // Urutan harus sama persis dengan header di Sheet
+        sheet.appendRow([
+          new Date(),
+          data.Nama,
+          data.No_Whatsapp,
+          data.Sekolah_Pilihan,
+          targetSKB,
+          data.Keyakinan_Lulus,
+          data.Target_Skor_SKD
+        ]);
+        
+        return ContentService
+          .createTextOutput(JSON.stringify({ "result": "success" }))
+          .setMimeType(ContentService.MimeType.JSON);
+          
+      } catch (error) {
+        return ContentService
+          .createTextOutput(JSON.stringify({ "result": "error", "message": error.toString() }))
+          .setMimeType(ContentService.MimeType.JSON);
+      }
+    }
+
+    ----------------------------------------------------------------
+
+    Langkah 3: Deploy Script
+    1. Klik "Deploy" > "New deployment".
+    2. Pilih tipe "Web app".
+    3. Execute as: "Me".
+    4. Who has access: "Anyone" (SANGAT PENTING).
+    5. Klik "Deploy", berikan izin akses saat diminta.
+    6. Salin "Web app URL" yang muncul.
+
+    Langkah 4: Hubungkan ke JavaScript
+    1. Di kode HTML di bawah, cari `const scriptURL`.
+    2. Ganti placeholder dengan URL Web app yang Anda salin.
+    ================================================================
+    -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("ebookForm");
+        const submitButton = document.getElementById("submitButton");
+        const buttonText = document.getElementById("buttonText");
+        const buttonSpinner = document.getElementById("buttonSpinner");
+        const formMessage = document.getElementById("formMessage");
+        const noWhatsappInput = document.getElementById("noWhatsapp");
+        const whatsappError = document.getElementById("whatsappError");
+        const sekolahSelect = document.getElementById("sekolahKedinasan");
+        const skbTargetContainer = document.getElementById("skbTargetContainer");
+        const skbTargetInput = document.getElementById("skbTarget");
+        const confidenceSlider = document.getElementById("confidenceLevel");
+        const confidenceValue = document.getElementById("confidenceValue");
+
+        // GANTI DENGAN URL GOOGLE APPS SCRIPT ANDA
+        const scriptURL = 'GANTI_DENGAN_URL_ANDA';
+        const ebookURL = 'https://drive.usercontent.google.com/download?id=1IwvA19bqImRE-UyeWJ8AYJzAZH5n9pt-&export=download&authuser=0&confirm=t&uuid=813b4156-01bb-4774-a7dd-a504278e0b66&at=AN8xHop7jo9UQyYKHodvei_8Ikjc:1751453394672';
+
+        // Show/hide SKB target field
+        sekolahSelect.addEventListener('change', (e) => {
+            const isSkbStmkg = e.target.value === 'STMKG';
+            skbTargetContainer.classList.toggle('hidden', !isSkbStmkg);
+            skbTargetInput.required = isSkbStmkg;
+        });
+        
+        // Update confidence slider display
+        confidenceSlider.addEventListener("input", (e) => {
+          confidenceValue.textContent = `${e.target.value}%`;
+        });
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Validasi Nomor WhatsApp
+          if (!/^(^\+62|62|08)(\d{8,15})$/.test(noWhatsappInput.value)) {
+              whatsappError.classList.remove('hidden');
+              noWhatsappInput.focus();
+              return;
+          } else {
+              whatsappError.classList.add('hidden');
+          }
+          
+          setLoading(true);
+
+          const formData = new FormData(form);
+          const dataObject = {};
+          formData.forEach((value, key) => {
+            dataObject[key] = value;
+          });
+
+          fetch(scriptURL, { 
+            method: 'POST',
+            mode: 'cors',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify(dataObject)
+          })
+          .then(response => response.json())
+          .then(data => {
+            if (data.result === "success") {
+              displayMessage('success', 'Berhasil! E-book Anda sedang diunduh...');
+              window.location.href = ebookURL;
+              form.reset();
+              skbTargetContainer.classList.add('hidden');
+              confidenceValue.textContent = '50%';
+            } else {
+              throw new Error(data.message || "Terjadi kesalahan.");
+            }
+          })
+          .catch(error => {
+            console.error("Error!", error.message);
+            displayMessage('error', `Pengiriman gagal: ${error.message}`);
+          })
+          .finally(() => {
+            setLoading(false);
+          });
+        });
+
+        function setLoading(isLoading) {
+          submitButton.disabled = isLoading;
+          buttonText.classList.toggle("hidden", isLoading);
+          buttonSpinner.classList.toggle("hidden", !isLoading);
+        }
+
+        function displayMessage(type, message) {
+          formMessage.innerHTML = message;
+          formMessage.className = "mt-6 text-center p-4 rounded-lg";
+          if (type === "success") {
+            formMessage.classList.add("bg-green-500/30", "text-green-200");
+          } else {
+            formMessage.classList.add("bg-red-500/30", "text-red-200");
+          }
+          setTimeout(() => {
+            formMessage.classList.add('hidden');
+          }, 5000);
+        }
+      });
+    </script>
+  </body>
+</html>
