@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pendaftaran Try Out SKD Kemerdekaan - GRATIS!</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #94121c; /* Merah Kemerdekaan */
+        color: #ffffff;
+      }
+      .content-card {
+        background-color: #ffffff;
+        color: #1e293b;
+        border-radius: 1.5rem; /* 24px */
+        box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+        overflow: hidden; /* To contain the gradient */
+        position: relative;
+      }
+      /* Hide default file input */
+      input[type="file"] {
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <div class="container mx-auto px-4 py-12 md:py-20">
+      <!-- Header Section -->
+      <header class="text-center mb-12">
+        <img
+          src="https://placehold.co/260x130/94121c/FFFFFF?text=LOGO+ANDA"
+          alt="Logo SPEEDU"
+          class="mx-auto h-24 mb-6"
+        />
+        <h1
+          class="text-4xl md:text-5xl font-black mb-3 text-white uppercase tracking-wider"
+        >
+          Try Out SKD Kedinasan Gratis!
+        </h1>
+        <p class="text-2xl font-semibold text-yellow-300">
+          Spesial Kemerdekaan
+        </p>
+      </header>
+
+      <main class="flex flex-col items-center gap-12 md:gap-16">
+        <!-- Flyer Display -->
+        <section id="flyer" class="w-full max-w-3xl">
+          <div class="bg-white/90 p-4 rounded-2xl shadow-2xl">
+            <img
+              id="webinarFlyer"
+              src="Merah dan Putih Modern Lomba Perayaan 17 Agustus Flyer (5).png"
+              alt="Flyer Try Out SKD"
+              class="rounded-xl w-full h-auto object-cover"
+              onerror="this.onerror=null;this.src='https://placehold.co/1200x800/94121c/FFFFFF?text=Gambar+Tidak+Tersedia';"
+            />
+          </div>
+        </section>
+
+        <!-- Benefit & Syarat Section -->
+        <div class="w-full max-w-3xl grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Benefit Card -->
+          <div class="content-card bg-gradient-to-br from-green-50 to-cyan-50">
+            <div class="p-8">
+              <h2 class="text-2xl font-bold text-slate-800 mb-6 text-center">
+                <i class="fas fa-star text-yellow-400 mr-2"></i>
+                Benefit Try Out
+              </h2>
+              <ul class="space-y-4 text-slate-700">
+                <li class="flex items-start">
+                  <div class="flex-shrink-0">
+                    <i
+                      class="fas fa-check-circle text-green-500 fa-lg w-6 mr-3 mt-1"
+                    ></i>
+                  </div>
+                  <span
+                    ><strong>Try Out Sesuai FR:</strong> Soal-soal terupdate
+                    berdasarkan Field Report (FR) terbaru.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <div class="flex-shrink-0">
+                    <i
+                      class="fas fa-trophy text-green-500 fa-lg w-6 mr-3 mt-1"
+                    ></i>
+                  </div>
+                  <span
+                    ><strong>Perankingan Nasional:</strong> Ukur kemampuanmu
+                    dengan peserta lain dari seluruh Indonesia.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <div class="flex-shrink-0">
+                    <i
+                      class="fas fa-book-open text-green-500 fa-lg w-6 mr-3 mt-1"
+                    ></i>
+                  </div>
+                  <span
+                    ><strong>Pembahasan Lengkap:</strong> Dapatkan pembahasan
+                    soal yang detail dan mudah dimengerti.</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Syarat Card -->
+          <div class="content-card bg-gradient-to-br from-red-50 to-blue-50">
+            <div class="p-8">
+              <h2 class="text-2xl font-bold text-slate-800 mb-6 text-center">
+                <i class="fas fa-clipboard-check text-blue-500 mr-2"></i>
+                Syarat Pendaftaran
+              </h2>
+              <ul class="space-y-4 text-slate-700">
+                <li class="flex items-start">
+                  <div class="flex-shrink-0">
+                    <i
+                      class="fab fa-tiktok text-red-500 fa-lg w-6 mr-3 mt-1"
+                    ></i>
+                  </div>
+                  <span
+                    ><strong>Follow TikTok:</strong> Wajib follow akun
+                    <a
+                      href="https://www.tiktok.com/@speedu.kedinasan"
+                      target="_blank"
+                      class="font-bold text-blue-600 underline"
+                      >@speedu.kedinasan</a
+                    >.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <div class="flex-shrink-0">
+                    <i
+                      class="fas fa-camera text-red-500 fa-lg w-6 mr-3 mt-1"
+                    ></i>
+                  </div>
+                  <span
+                    ><strong>Screenshot Bukti:</strong> Siapkan bukti screenshot
+                    Anda telah follow akun TikTok kami.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <div class="flex-shrink-0">
+                    <i
+                      class="fas fa-upload text-red-500 fa-lg w-6 mr-3 mt-1"
+                    ></i>
+                  </div>
+                  <span
+                    ><strong>Unggah Bukti:</strong> Kirim bukti screenshot pada
+                    formulir pendaftaran di bawah ini.</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Registration Form -->
+        <section id="registration" class="w-full max-w-3xl">
+          <div class="content-card p-8 md:p-12">
+            <h2 class="text-3xl font-bold text-center mb-6 text-slate-800">
+              Formulir Pendaftaran
+            </h2>
+            <form id="tryoutForm" class="space-y-6">
+              <!-- Data Diri -->
+              <div>
+                <label
+                  for="fullName"
+                  class="block mb-2 font-semibold text-slate-700"
+                  >Nama Lengkap</label
+                >
+                <input
+                  type="text"
+                  id="fullName"
+                  name="Nama"
+                  class="w-full p-3 bg-slate-100 border-2 border-transparent rounded-lg focus:bg-white focus:border-red-500 focus:ring-0 transition"
+                  placeholder="Tulis nama lengkap Anda..."
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="noWhatsapp"
+                  class="block mb-2 font-semibold text-slate-700"
+                  >Nomor WhatsApp</label
+                >
+                <input
+                  type="tel"
+                  id="noWhatsapp"
+                  name="No_Whatsapp"
+                  class="w-full p-3 bg-slate-100 border-2 border-transparent rounded-lg focus:bg-white focus:border-red-500 focus:ring-0 transition"
+                  placeholder="Contoh: 08123456789"
+                  required
+                />
+                <p id="whatsappError" class="text-red-600 text-xs mt-2 hidden">
+                  Mohon masukkan nomor Indonesia yang valid.
+                </p>
+              </div>
+
+              <!-- File Upload -->
+              <div>
+                <label class="block mb-2 font-semibold text-slate-700"
+                  >Bukti Follow TikTok</label
+                >
+                <label
+                  for="tiktokProof"
+                  class="w-full cursor-pointer bg-slate-100 border-2 border-dashed border-slate-300 text-slate-500 rounded-lg flex items-center justify-center p-4 hover:bg-slate-200"
+                >
+                  <i class="fas fa-upload mr-3"></i>
+                  <span id="tiktokFileName">Pilih atau Seret File ke Sini</span>
+                </label>
+                <input
+                  type="file"
+                  id="tiktokProof"
+                  name="Bukti_Follow"
+                  accept="image/*"
+                  required
+                />
+              </div>
+
+              <!-- Target Skor -->
+              <div>
+                <label
+                  for="expectedScore"
+                  class="block mb-2 font-semibold text-slate-700"
+                  >Target Skor SKD</label
+                >
+                <input
+                  type="number"
+                  id="expectedScore"
+                  name="Target_Skor_SKD"
+                  min="0"
+                  max="550"
+                  class="w-full p-3 bg-slate-100 border-2 border-transparent rounded-lg focus:bg-white focus:border-red-500 focus:ring-0 transition"
+                  placeholder="Contoh: 450"
+                  required
+                />
+              </div>
+
+              <!-- Submit Button -->
+              <button
+                type="submit"
+                id="submitButton"
+                class="w-full text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-bold rounded-lg text-lg px-5 py-4 text-center transition duration-300 ease-in-out transform hover:scale-105"
+              >
+                <span id="buttonText">DAFTAR SEKARANG</span>
+                <i id="buttonSpinner" class="fas fa-spinner fa-spin hidden"></i>
+              </button>
+            </form>
+            <div
+              id="formMessage"
+              class="mt-6 text-center p-4 rounded-lg hidden"
+            ></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- 
+    ================================================================
+    PETUNJUK GOOGLE APPS SCRIPT UNTUK FORM TRY OUT
+    ================================================================
+    
+    Langkah 1: Buat Google Sheet & Folder Google Drive
+    1. Buat Google Sheet baru.
+    2. Di baris pertama, buat header kolom **PERSIS** seperti ini:
+       `Timestamp`, `Nama`, `No_Whatsapp`, `Bukti_Follow`, `Target_Skor_SKD`
+    3. Buat folder baru di Google Drive (misal: "Bukti Pendaftaran Try Out").
+    4. Salin ID Folder dari URL.
+
+    Langkah 2: Buat Google Apps Script
+    1. Di Google Sheet, buka Ekstensi > Apps Script.
+    2. Hapus kode contoh, lalu salin dan tempel kode di bawah ini.
+    3. Ganti `'GANTI_DENGAN_ID_FOLDER_ANDA'` dengan ID Folder Google Drive Anda.
+    
+    ----------------------------------------------------------------
+    
+    // Ganti dengan ID Folder Google Drive Anda
+    var FOLDER_ID = 'GANTI_DENGAN_ID_FOLDER_ANDA';
+
+    function doPost(e) {
+      try {
+        var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Sheet1"); // Pastikan nama sheet benar
+        var folder = DriveApp.getFolderById(FOLDER_ID);
+
+        var fullName = e.parameter.Nama;
+        var whatsappNumber = e.parameter.No_Whatsapp;
+        var targetScore = e.parameter.Target_Skor_SKD;
+        
+        var tiktokProofBlob = e.parameter.Bukti_Follow;
+
+        var timestamp = new Date();
+        var tiktokFileUrl = uploadFileToDrive(tiktokProofBlob, folder, timestamp, fullName, 'FollowTikTok');
+        
+        sheet.appendRow([
+          timestamp,
+          fullName,
+          whatsappNumber,
+          tiktokFileUrl,
+          targetScore
+        ]);
+        
+        return ContentService.createTextOutput(JSON.stringify({ "result": "success" })).setMimeType(ContentService.MimeType.JSON);
+        
+      } catch (error) {
+        return ContentService.createTextOutput(JSON.stringify({ "result": "error", "message": error.toString() })).setMimeType(ContentService.MimeType.JSON);
+      }
+    }
+
+    function uploadFileToDrive(fileBlob, folder, timestamp, name, type) {
+      if (!fileBlob) return 'Tidak ada file';
+
+      var sanitizedName = name.replace(/[^a-zA-Z0-9]/g, '_');
+      var fileName = Utilities.formatDate(timestamp, 'GMT+7', 'yyyyMMdd_HHmmss') + '_' + sanitizedName + '_' + type + '.' + fileBlob.getName().split('.').pop();
+      
+      var file = folder.createFile(fileBlob.getBlob());
+      file.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
+      
+      return file.getUrl();
+    }
+
+    ----------------------------------------------------------------
+
+    Langkah 3: Deploy Script
+    1. Klik "Deploy" > "New deployment".
+    2. Tipe: "Web app", Execute as: "Me", Who has access: "Anyone".
+    3. Klik "Deploy", berikan izin akses, lalu salin URL Web app.
+
+    Langkah 4: Hubungkan ke JavaScript
+    1. Di kode HTML di bawah, cari `const scriptURL`.
+    2. Ganti placeholder dengan URL Web app yang Anda salin.
+    ================================================================
+    -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("tryoutForm");
+        const submitButton = document.getElementById("submitButton");
+        const buttonText = document.getElementById("buttonText");
+        const buttonSpinner = document.getElementById("buttonSpinner");
+        const formMessage = document.getElementById("formMessage");
+        const noWhatsappInput = document.getElementById("noWhatsapp");
+        const whatsappError = document.getElementById("whatsappError");
+        const tiktokProofInput = document.getElementById("tiktokProof");
+
+        // GANTI DENGAN URL GOOGLE APPS SCRIPT ANDA
+        const scriptURL =
+          "https://script.google.com/macros/s/AKfycbwdSTGB1w1MRwau8fjHprCPqFhhBhuVEtlXae_Ze827icnzDxv5lWZ51IY3JxYK2tXg/exec";
+
+        // File Input Logic
+        const fileNameLabel = document.getElementById("tiktokFileName");
+        const originalText = fileNameLabel.textContent;
+        tiktokProofInput.addEventListener("change", () => {
+          if (tiktokProofInput.files.length > 0) {
+            fileNameLabel.textContent = tiktokProofInput.files[0].name;
+          } else {
+            fileNameLabel.textContent = originalText;
+          }
+        });
+
+        // Form Submission
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          if (!/^(^\+62|62|08)(\d{8,15})$/.test(noWhatsappInput.value)) {
+            whatsappError.classList.remove("hidden");
+            noWhatsappInput.focus();
+            return;
+          } else {
+            whatsappError.classList.add("hidden");
+          }
+
+          if (tiktokProofInput.files.length === 0) {
+            displayMessage("error", "Mohon unggah bukti follow TikTok.");
+            return;
+          }
+
+          setLoading(true);
+
+          const formData = new FormData(form);
+
+          fetch(scriptURL, { method: "POST", body: formData })
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.result === "success") {
+                displayMessage(
+                  "success",
+                  "Pendaftaran berhasil! Informasi lebih lanjut akan dikirimkan melalui WhatsApp."
+                );
+                form.reset();
+                fileNameLabel.textContent = originalText;
+              } else {
+                throw new Error(data.message || "Terjadi kesalahan.");
+              }
+            })
+            .catch((error) => {
+              console.error("Error!", error.message);
+              displayMessage("error", `Pendaftaran gagal: ${error.message}`);
+            })
+            .finally(() => {
+              setLoading(false);
+            });
+        });
+
+        function setLoading(isLoading) {
+          submitButton.disabled = isLoading;
+          buttonText.classList.toggle("hidden", isLoading);
+          buttonSpinner.classList.toggle("hidden", !isLoading);
+        }
+
+        function displayMessage(type, message) {
+          formMessage.innerHTML = message;
+          formMessage.className = "mt-6 text-center p-4 rounded-lg";
+          if (type === "success") {
+            formMessage.classList.add("bg-green-100", "text-green-800");
+          } else {
+            formMessage.classList.add("bg-red-100", "text-red-800");
+          }
+          setTimeout(() => {
+            formMessage.classList.add("hidden");
+          }, 5000);
+        }
+      });
+    </script>
+  </body>
+</html>
