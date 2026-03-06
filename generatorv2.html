@@ -129,10 +129,10 @@
     .pkg-card.white .pk-sub { color: #6b7280; }
     .pkg-card.blue .pk-sub { color: #bfdbfe; }
 
-    .pkg-card .old-p { font-size: 1.9rem; position: relative; display: inline-flex; align-items: center; justify-content: center; margin-top: 14px; line-height: 1; }
-    .pkg-card .old-p::after { content: ''; position: absolute; left: -5%; width: 110%; height: 5px; background-color: #ef4444; opacity: .85; border-radius: 2px; top: 50%; margin-top: -2px; }
-    .pkg-card.white .old-p { color: #9ca3af; }
-    .pkg-card.blue .old-p { color: #93c5fd; }
+    .pkg-card .old-p { font-size: 1.9rem; margin-top: 14px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+    .pkg-card .old-p .cross-text { color: #ef4444; font-weight: 900; font-size: 2.2rem; display: inline-block; line-height: 1; margin-top: -3px; }
+    .pkg-card.white .old-p { color: #ef4444; }
+    .pkg-card.blue .old-p { color: #ef4444; }
 
     .pkg-card .new-p { font-size: 4.8rem; font-weight: 900; line-height: 1.2; margin-bottom: 12px; }
     .pkg-card.blue .new-p { color: #fff; }
@@ -302,7 +302,7 @@
       <div class="pkg-card white">
         <div class="pk-title" id="flyerP1Title">PAKET LENGKAP: 6x TRY OUT FR SKD (11-16 AGUSTUS)</div>
         <div class="pk-sub" id="flyerP1Sub">#Promo Kemerdekaan Indonesia ke 80</div>
-        <div class="old-p" id="flyerP1Old">Rp 100.000</div>
+        <div class="old-p"><span class="cross-text">X</span><span id="flyerP1Old">Rp 100.000</span><span class="cross-text">X</span></div>
         <div class="new-p" id="flyerP1New">Rp 80.000</div>
         <span class="promo-badge" id="flyerP1Badge">HARGA PROMO TERBATAS!</span>
         <div class="ben-title">Keuntungan:</div>
@@ -315,7 +315,7 @@
       <div class="pkg-card blue">
         <div class="pk-title" id="flyerP2Title">1x TRY OUT FR SKD (EDISI 11-16 AGUSTUS)</div>
         <div class="pk-sub" id="flyerP2Sub">Bocoran Soal Asli dari Peserta SKD Terbaru</div>
-        <div class="old-p" id="flyerP2Old">Rp 20.000</div>
+        <div class="old-p"><span class="cross-text">X</span><span id="flyerP2Old">Rp 20.000</span><span class="cross-text">X</span></div>
         <div class="new-p" id="flyerP2New">Rp 17.000</div>
         <span class="promo-badge" id="flyerP2Badge">HARGA PROMO TERBATAS!</span>
         <div class="ben-title">Keuntungan:</div>
@@ -422,23 +422,9 @@
       clone.style.width = '1080px';
       clone.style.height = '1920px';
       
-      // SPECIFIC HTML2CANVAS OPTICAL FIX:
-      // html2canvas incorrectly calculates Poppins font baseline in flex items. 
-      // Force padding offsets on the cloned buttons specifically for the rendered output.
-      clone.querySelectorAll('.promo-badge').forEach(badge => {
-        badge.style.paddingTop = '6px';
-        badge.style.paddingBottom = '18px';
-      });
-      const ctaPill = clone.querySelector('.cta-pill');
-      if (ctaPill) {
-        ctaPill.style.paddingTop = '4px';
-        ctaPill.style.paddingBottom = '28px';
-      }
-      
       wrapper.appendChild(clone);
       document.body.appendChild(wrapper);
 
-      // Wait slightly to let browser reflow new dom elements reliably
       await new Promise(r => setTimeout(r, 150));
 
       const canvas = await html2canvas(clone, {
@@ -454,7 +440,7 @@
         windowWidth: 1080,
         windowHeight: 1920,
         backgroundColor: '#ffffff',
-        logging: false,
+        logging: false
       });
 
       document.body.removeChild(wrapper);
